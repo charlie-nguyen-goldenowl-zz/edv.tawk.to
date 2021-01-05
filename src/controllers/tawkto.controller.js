@@ -14,7 +14,9 @@ const postwebhook = catchAsync(async (req, res) => {
   console.log(req.query);
   console.log(req.body);
   console.log(req.headers);
-  const newHookSaved = await tawktoService.saveHook(req.body);
+  const data = req.body;
+  data.projectId = req.params.projectId;
+  const newHookSaved = await tawktoService.saveHook(data);
   res.send({ foo: 'post webhook' });
 });
 module.exports = {

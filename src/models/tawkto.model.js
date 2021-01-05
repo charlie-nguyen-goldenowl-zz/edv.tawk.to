@@ -12,6 +12,12 @@ const ticketSchema = new mongoose.Schema({ id: String, humanId: Number, subject:
 
 const tawktoSchema = mongoose.Schema(
   {
+    projectId: {
+      type: 'Number',
+    },
+    chatId: {
+      type: 'String',
+    },
     visitor: {
       name: {
         type: 'String',
@@ -25,9 +31,6 @@ const tawktoSchema = mongoose.Schema(
       email: {
         type: 'String',
       },
-    },
-    chatId: {
-      type: 'String',
     },
     message: {
       sender: {
